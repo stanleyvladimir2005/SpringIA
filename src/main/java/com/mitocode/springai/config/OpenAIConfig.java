@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class OpenAIConfig {
 
+    /* Se comenta porque da conflicto con las function Calling
     @Value("${spring.ai.openai.api-key}")
     private String API_KEY;
 
@@ -24,5 +25,5 @@ public class OpenAIConfig {
                 .withMaxTokens(200)
                 .build()
         );
-    }
+    }*/
 }
