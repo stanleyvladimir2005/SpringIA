@@ -3,44 +3,43 @@ package com.mitocode.springai.service.impl;
 import com.mitocode.springai.model.Book;
 import com.mitocode.springai.repo.IBookRepo;
 import com.mitocode.springai.service.IBookService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class BookServiceImpl implements IBookService {
 
-    @Autowired
-    private IBookRepo repo;
-
+    private final IBookRepo repo;
 
     @Override
-    public Book save(Book book) throws Exception {
+    public Book save(Book book)  {
         return repo.save(book);
     }
 
     @Override
-    public List<Book> saveAll(List<Book> t) throws Exception {
+    public List<Book> saveAll(List<Book> t) {
         return repo.saveAll(t);
     }
 
     @Override
-    public Book update(Book book, Integer integer) throws Exception {
+    public Book update(Book book, Integer integer) {
         return repo.save(book);
     }
 
     @Override
-    public List<Book> findAll() throws Exception {
+    public List<Book> findAll() {
         return repo.findAll();
     }
 
     @Override
-    public Book findById(Integer id) throws Exception {
+    public Book findById(Integer id)  {
         return repo.findById(id).orElse(new Book());
     }
 
     @Override
-    public void delete(Integer id) throws Exception {
+    public void delete(Integer id)  {
         repo.deleteById(id);
     }
 }
